@@ -282,11 +282,16 @@
   .fork-card.c .tag{color:var(--mute);}
   .fork-card h3{font-size:21px; margin-bottom:10px;}
   .fork-card p{font-size:14.5px; color:var(--mute);}
-  .fork-price{
-    display:inline-block; margin-top:14px;
-    font-size:13px; font-weight:700; color:var(--chalk);
-    background:rgba(244,241,232,0.08); padding:6px 12px; border-radius:100px;
+  .fork-billing{
+    margin-top:18px; padding:14px 16px;
+    border-radius:12px; border:1px solid var(--pitch-line);
+    background:rgba(244,241,232,0.04);
   }
+  .fork-billing .unit{display:block; font-size:12.5px; font-weight:700; letter-spacing:0.01em; margin-bottom:5px;}
+  .fork-billing .price{display:block; font-size:17px; font-weight:800; color:var(--chalk);}
+  .fork-card.a .fork-billing{background:rgba(47,184,255,0.08); border-color:rgba(47,184,255,0.3);}
+  .fork-card.a .fork-billing .unit{color:var(--whistle);}
+  .fork-card.b .fork-billing .unit{color:var(--chalk-dim);}
   @media (max-width:900px){.fork-grid{grid-template-columns:1fr;}}
 
   /* ---------- SOCIAL PROOF ---------- */
@@ -466,14 +471,20 @@
         <div class="fork-card a">
           <span class="tag">OPTION A</span>
           <h3>🏆 팀 멤버십으로</h3>
-          <p>측정·개인 맞춤 훈련·영양까지 — 한 달간 확인한 걸 본격적으로 이어갑니다.<br>학부모·선수 개별 결제로 시작합니다.</p>
-          <span class="fork-price">1인당 월 5만원부터</span>
+          <p>측정·개인 맞춤 훈련·영양까지 — 한 달간 확인한 걸 본격적으로 이어갑니다.</p>
+          <div class="fork-billing">
+            <span class="unit">학부모·선수 개별 결제</span>
+            <span class="price">1인당 월 5만원부터</span>
+          </div>
         </div>
         <div class="fork-card b">
           <span class="tag">OPTION B</span>
           <h3>📱 소프트웨어만 계속</h3>
-          <p>관리 앱만 필요하시다면, 소프트웨어 단독 상품을 이어서 이용하실 수 있습니다.<br>팀/지도자 단위로 결제합니다.</p>
-          <span class="fork-price">팀당 월 12만원부터</span>
+          <p>관리 앱만 필요하시다면, 소프트웨어 단독 상품을 이어서 이용하실 수 있습니다.</p>
+          <div class="fork-billing">
+            <span class="unit">팀/지도자 단위 결제</span>
+            <span class="price">팀당 월 12만원부터</span>
+          </div>
         </div>
         <div class="fork-card c">
           <span class="tag">OPTION C</span>

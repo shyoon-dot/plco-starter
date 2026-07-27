@@ -185,6 +185,8 @@
     max-width:640px;
   }
   p.section-lead{color:var(--chalk-dim); font-size:16px; margin-top:16px; max-width:520px;}
+  .problem-intro{max-width:none; white-space:nowrap;}
+  @media (max-width:640px){.problem-intro{white-space:normal; max-width:520px;}}
 
   /* ---------- TIMELINE (signature element) ---------- */
   .timeline-wrap{margin-top:72px; position:relative;}
@@ -374,7 +376,7 @@
         <div class="quote-bubble">"좋은 건 알죠.<br>근데 시작이 어려웠습니다."</div>
       </div>
       <p class="quote-by">— 팀을 맡고 있는 지도자들의 이야기</p>
-      <p class="section-lead" style="margin-top:28px; font-size:19px;">팀 멤버십, 필요성은 느끼지만 막상 도입하려면 걸리는 것들이 있습니다.</p>
+      <p class="section-lead problem-intro" style="margin-top:28px; font-size:19px;">팀 멤버십, 필요성은 느끼지만 막상 도입하려면 걸리는 것들이 있습니다.</p>
       <div class="problem-grid">
         <div class="problem-card">
           <span class="num">01</span>

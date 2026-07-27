@@ -112,13 +112,20 @@
     position:fixed; bottom:24px; left:50%;
     transform:translateX(-50%) translateY(120%);
     z-index:100;
-    font-size:15px; padding:14px 28px;
+    flex-direction:column; gap:2px;
+    font-size:15px; padding:10px 28px 13px;
     opacity:0; pointer-events:none;
     transition:transform .3s cubic-bezier(.2,.7,.2,1), opacity .3s ease;
   }
   .floating-cta.show{transform:translateX(-50%) translateY(0); opacity:1; pointer-events:auto;}
+  .floating-countdown{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:11.5px; font-weight:700; letter-spacing:0.02em;
+    color:#04141C; opacity:0.72;
+  }
+  .floating-cta-main{display:inline-flex; align-items:center; gap:8px;}
   @media (max-width:480px){
-    .floating-cta{bottom:16px; left:16px; right:16px; transform:translateX(0) translateY(120%); width:calc(100% - 32px); justify-content:center;}
+    .floating-cta{bottom:16px; left:16px; right:16px; transform:translateX(0) translateY(120%); width:calc(100% - 32px);}
     .floating-cta.show{transform:translateX(0) translateY(0);}
   }
 
@@ -286,6 +293,11 @@
   }
   .cohort-panel .section-title{margin:0 auto; }
   .cohort-panel .section-lead{margin:16px auto 0;}
+  .deadline-line{
+    margin-top:24px; font-size:15px; color:var(--chalk);
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .deadline-line b{color:var(--card-red); font-weight:700;}
 
   /* ---------- FINAL CTA ---------- */
   .final-cta{text-align:center; padding-bottom:140px;}
@@ -318,6 +330,7 @@
         <span class="cohort-tag">1기 모집 중 · 25팀 한정</span>
         <h2 class="section-title display">⏳ 지금이 아니면, 다음은 기약이 없습니다.</h2>
         <p class="section-lead">플코 스타터는 상시 모집이 아니라 기수 단위로만 열립니다.<br>지금은 1기, 25팀 한정이고 2기가 언제 열릴지는 아직 정해진 게 없습니다.<br>완벽한 타이밍을 기다리지 마세요 — 부담 없이, 가볍게 한 번 시작해보세요.</p>
+        <p class="deadline-line">📅 1기 모집 마감: <b>8월 14일</b></p>
       </div>
     </div>
   </section>
@@ -468,13 +481,16 @@
       <h2 class="display">🚀 지금, 우리 팀부터<br>시작해보세요.</h2>
       <a href="apply.html" class="cta-btn">신청서 작성하기 <span class="arrow">→</span></a>
       <div class="cta-note" style="margin-top:14px;">3분이면 작성 가능해요</div>
-      <div class="count">1기 · 25팀 한정 · 2기 오픈 일정은 미정입니다</div>
+      <div class="count">1기 · 25팀 한정 · 8월 14일 모집 마감 · 2기 오픈 일정은 미정입니다</div>
     </div>
   </section>
 
   <footer>플코 스타터 — 팀 멤버십 사전체험 프로그램</footer>
 
-  <a href="apply.html" class="cta-btn floating-cta" id="floating-cta">신청서 작성하기 <span class="arrow">→</span></a>
+  <a href="apply.html" class="cta-btn floating-cta" id="floating-cta">
+    <span class="floating-countdown" id="floating-countdown">마감까지 -일 --:--:--</span>
+    <span class="floating-cta-main">신청서 작성하기 <span class="arrow">→</span></span>
+  </a>
 
 </div>
 
@@ -499,6 +515,24 @@
     const showAfter = hero.offsetHeight * 0.6;
     floatingCta.classList.toggle('show', window.scrollY > showAfter);
   }, { passive: true });
+
+  const deadline = new Date('2026-08-14T23:59:59+09:00').getTime();
+  const countdownEl = document.getElementById('floating-countdown');
+  function pad(n){ return String(n).padStart(2, '0'); }
+  function updateCountdown(){
+    const diff = deadline - Date.now();
+    if(diff <= 0){
+      countdownEl.textContent = '모집이 마감되었습니다';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    countdownEl.textContent = `마감까지 ${d}일 ${pad(h)}:${pad(m)}:${pad(s)}`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 </script>
 
 </body>

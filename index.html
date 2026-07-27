@@ -138,6 +138,26 @@
     width:1px; height:48px; background:linear-gradient(var(--mute), transparent);
   }
 
+  /* ---------- COACH QUOTE ---------- */
+  .coach-msg{display:flex; align-items:flex-end; gap:14px;}
+  .coach-avatar{
+    flex-shrink:0; width:48px; height:48px; border-radius:50%;
+    background:rgba(244,241,232,0.06); border:1px solid var(--pitch-line);
+    display:flex; align-items:center; justify-content:center; font-size:22px;
+  }
+  .quote-bubble{
+    background:var(--chalk);
+    color:var(--pitch);
+    padding:22px 28px;
+    border-radius:22px 22px 22px 6px;
+    font-family:'Pretendard','Noto Sans KR',sans-serif;
+    font-weight:800; letter-spacing:-0.02em;
+    font-size:clamp(21px, 3.4vw, 28px);
+    line-height:1.4;
+    max-width:560px;
+  }
+  .quote-by{font-size:13px; color:var(--mute); margin:12px 0 0 62px;}
+
   /* ---------- PROBLEM ---------- */
   .problem-grid{
     display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
@@ -342,8 +362,12 @@
   <!-- PROBLEM -->
   <section class="reveal">
     <div class="wrap">
-      <h2 class="section-title display">좋은 건 알죠. 근데 시작이 어려웠습니다.</h2>
-      <p class="section-lead">팀 멤버십, 필요성은 느끼지만 막상 도입하려면 걸리는 것들이 있습니다.</p>
+      <div class="coach-msg">
+        <div class="coach-avatar">🧑‍🏫</div>
+        <div class="quote-bubble">"좋은 건 알죠.<br>근데 시작이 어려웠습니다."</div>
+      </div>
+      <p class="quote-by">— 팀을 맡고 있는 지도자들의 이야기</p>
+      <p class="section-lead" style="margin-top:28px;">팀 멤버십, 필요성은 느끼지만 막상 도입하려면 걸리는 것들이 있습니다.</p>
       <div class="problem-grid">
         <div class="problem-card">
           <span class="num">01</span>

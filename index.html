@@ -183,10 +183,14 @@
     font-size:clamp(30px, 4.5vw, 44px);
     color:var(--chalk);
     max-width:640px;
+    white-space:nowrap;
   }
   p.section-lead{color:var(--chalk-dim); font-size:16px; margin-top:16px; max-width:520px;}
   .problem-intro{max-width:none; white-space:nowrap;}
-  @media (max-width:640px){.problem-intro{white-space:normal; max-width:520px;}}
+  @media (max-width:640px){
+    h2.section-title{white-space:normal;}
+    .problem-intro{white-space:normal; max-width:520px;}
+  }
 
   /* ---------- TIMELINE (signature element) ---------- */
   .timeline-wrap{margin-top:72px; position:relative;}

@@ -262,6 +262,14 @@
   }
   .feature-text h3{font-size:23px; font-weight:800; color:var(--chalk); margin-bottom:10px; letter-spacing:-0.02em;}
   .feature-text p{font-size:15px; color:var(--mute); max-width:340px;}
+  .feature-link{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:16px;
+    font-size:14px; font-weight:700; color:var(--whistle);
+    text-decoration:none;
+  }
+  .feature-link .arrow{transition:transform .18s ease;}
+  .feature-link:hover .arrow{transform:translateX(4px);}
   .feature-mock{flex:1; min-width:260px; display:flex; justify-content:center;}
 
   .mock-card{
@@ -335,6 +343,7 @@
   .section-light .feature-text h3{color:var(--pitch);}
   .section-light .feature-text p{color:#5B665F;}
   .section-light .feature-text .tag{color:#0C6FA8; background:rgba(47,184,255,0.12); border-color:rgba(47,184,255,0.4);}
+  .section-light .feature-link{color:#0C6FA8;}
   .section-light .mock-card{
     background:#FFFFFF;
     border-color:rgba(10,19,16,0.1);
@@ -609,9 +618,9 @@
   </section>
 
   <!-- FEATURES -->
-  <section class="reveal section-light">
+  <section class="reveal section-light" id="features">
     <div class="wrap">
-      <h2 class="section-title display">소프트웨어로 이런 것까지 됩니다</h2>
+      <h2 class="section-title display">플코 스타터로 이런 것까지 됩니다</h2>
       <p class="section-lead">체험 기간에도 실제 서비스와 동일한 기능을 그대로 사용하실 수 있습니다.</p>
       <div class="feature-rows">
         <div class="feature-row">
@@ -620,6 +629,7 @@
             <span class="tag">📅 일정 관리</span>
             <h3>팀 일정을 한눈에</h3>
             <p>훈련·리그경기 일정을 캘린더로 등록하고, 선수 참가 여부까지 자동으로 취합됩니다.</p>
+            <a href="guide-schedule.html" class="feature-link">기능 자세히 보기 <span class="arrow">→</span></a>
           </div>
           <div class="feature-mock">
             <div class="mock-card">
@@ -642,6 +652,7 @@
             <span class="tag">💬 온라인 소통</span>
             <h3>선수와 바로 소통</h3>
             <p>공지사항으로 팀 전체에 안내를 보내고, 선수 개인별 피드백을 남기고 답장까지 주고받을 수 있습니다.</p>
+            <a href="guide-comm.html" class="feature-link">기능 자세히 보기 <span class="arrow">→</span></a>
           </div>
           <div class="feature-mock">
             <div class="mock-card mock-comm">
@@ -667,6 +678,7 @@
             <span class="tag">📊 컨디션 데이터</span>
             <h3>몸 상태를 데이터로</h3>
             <p>선수가 매일 남기는 컨디션·통증 체크를 준비도·ACWR 같은 지표로 자동 계산해 보여줍니다.</p>
+            <a href="guide-condition.html" class="feature-link">기능 자세히 보기 <span class="arrow">→</span></a>
           </div>
           <div class="feature-mock">
             <div class="mock-card mock-condition">
@@ -765,6 +777,7 @@
             <span class="unit">학부모·선수 개별 결제</span>
             <span class="price">1인당 월 5만원부터</span>
           </div>
+          <a href="https://plco.pro/membership-team" target="_blank" rel="noopener" class="feature-link">자세히 보기 <span class="arrow">→</span></a>
         </div>
         <div class="fork-card b">
           <span class="tag">OPTION B</span>

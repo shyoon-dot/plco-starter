@@ -497,7 +497,11 @@
   .reveal.in .fork-card:nth-child(1){transition-delay:.05s;}
   .reveal.in .fork-card:nth-child(2){transition-delay:.16s;}
   .reveal.in .fork-card:nth-child(3){transition-delay:.27s;}
-  .fork-card:hover{transform:translateY(-4px);}
+  .fork-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--whistle);
+    box-shadow:0 0 0 3px rgba(47,184,255,0.15);
+  }
   .fork-card.a{background:linear-gradient(160deg, rgba(47,184,255,0.09), rgba(47,184,255,0.01)); border-color:rgba(47,184,255,0.25);}
   .fork-card.b{background:linear-gradient(160deg, rgba(244,241,232,0.05), rgba(244,241,232,0.01));}
   .fork-card.c{background:rgba(244,241,232,0.02); border-color:var(--pitch-line);}

@@ -567,8 +567,12 @@
   }
   .cohort-panel .section-title{margin:0 auto; }
   .cohort-panel .section-lead{margin:16px auto 0;}
+  .deadline-lines{
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    margin-top:24px;
+  }
   .deadline-line{
-    margin-top:24px; font-size:15px; color:var(--chalk);
+    font-size:15px; color:var(--chalk);
     display:inline-flex; align-items:center; gap:6px;
   }
   .deadline-line b{color:var(--card-red); font-weight:700;}
@@ -589,7 +593,7 @@
   <section class="hero">
     <div class="eyebrow"><span class="dot"></span>플코 스타터 1기 · 25팀 한정</div>
     <h1 class="display">30일 후,<br><span class="zero">0원.</span></h1>
-    <p class="sub">지도자 참가비 <b>3만원</b>, 우수하게 쓰면 그대로 돌려드립니다.<br>우리 팀 선수 전원, 한 달간 무료로 관리해보세요.</p>
+    <p class="sub">지도자 참가비 <b>3만원</b>, 우수하게 쓰면 그대로 돌려드립니다.<br>우리 팀 선수 전원, 30일간 무료로 관리해보세요.</p>
     <div class="cta-wrap">
       <a href="apply.html" class="cta-btn">신청서 작성하기 <span class="arrow">→</span></a>
       <span class="cta-note">작성에 1분, 결정에 하루면 충분합니다</span>
@@ -604,7 +608,10 @@
         <span class="cohort-tag">1기 모집 중 · 25팀 한정</span>
         <h2 class="section-title display">⏳ 지금이 아니면, 다음은 기약이 없습니다.</h2>
         <p class="section-lead">플코 스타터는 상시 모집이 아니라 기수 단위로만 열립니다.<br>지금은 1기, 25팀 한정이고 2기가 언제 열릴지는 아직 정해진 게 없습니다.<br>완벽한 타이밍을 기다리지 마세요 — 부담 없이, 가볍게 한 번 시작해보세요.</p>
-        <p class="deadline-line">📅 1기 모집 마감: <b>8월 14일</b></p>
+        <div class="deadline-lines">
+          <p class="deadline-line">📅 1기 모집 마감: <b>8월 14일</b></p>
+          <p class="deadline-line">🗓️ 진행 기간: <b>8월 18일 ~ 9월 17일</b> (30일)</p>
+        </div>
       </div>
     </div>
   </section>
@@ -643,8 +650,8 @@
     <div class="wrap">
       <div class="promise-panel">
         <span class="promise-icon">🤝</span>
-        <p class="promise-text">지도자님은 <b>한 달 동안 잘 쓰기만</b> 하시면 됩니다.<br>잘 쓰실 수 있도록, 저희가 곁에서 계속 도와드립니다.</p>
-        <p class="promise-sub">의미 있는 한 달을 만들어서, 체계적인 팀 관리가 어떤 건지 직접 보여드리겠습니다.</p>
+        <p class="promise-text">지도자님은 <b>30일 동안 잘 쓰기만</b> 하시면 됩니다.<br>잘 쓰실 수 있도록, 저희가 곁에서 계속 도와드립니다.</p>
+        <p class="promise-sub">의미 있는 30일을 만들어서, 체계적인 팀 관리가 어떤 건지 직접 보여드리겠습니다.</p>
       </div>
     </div>
   </section>
@@ -748,7 +755,7 @@
             <p>사용 가이드 전달</p>
           </div>
           <div class="tl-node">
-            <div class="tl-dot">3</div>
+            <div class="tl-dot">D3</div>
             <h4>🎯 미션 수행</h4>
             <p>선수 초대, 일정 등록, 선수 교육</p>
           </div>
@@ -774,7 +781,7 @@
           </div>
         </div>
       </div>
-      <p class="timeline-note">📞 한 달 동안 궁금한 점이 생기면 전화·문자로 바로바로 1:1 상담 가능합니다.</p>
+      <p class="timeline-note">📞 30일 동안 궁금한 점이 생기면 전화·문자로 바로바로 1:1 상담 가능합니다.</p>
     </div>
   </section>
 
@@ -811,7 +818,7 @@
         <div class="fork-card a">
           <span class="tag">OPTION A</span>
           <h3>🏆 팀 멤버십으로</h3>
-          <p>측정·개인 맞춤 훈련·영양까지 — 한 달간 확인한 걸 본격적으로 이어갑니다.</p>
+          <p>측정·개인 맞춤 훈련·영양까지 — 30일간 확인한 걸 본격적으로 이어갑니다.</p>
           <div class="fork-billing">
             <span class="unit">학부모·선수 개별 결제</span>
             <span class="price">1인당 월 5만원부터</span>

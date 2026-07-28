@@ -227,6 +227,86 @@
   .problem-card h3{font-size:19px; font-weight:700; margin-bottom:10px; color:var(--chalk);}
   .problem-card p{font-size:14.5px; color:var(--mute);}
 
+  /* ---------- FEATURES (software showcase) ---------- */
+  .feature-rows{margin-top:64px; display:flex; flex-direction:column; gap:72px;}
+  .feature-row{
+    display:flex; align-items:center; gap:56px;
+    opacity:0; transform:translateY(24px);
+    transition:opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in .feature-row{opacity:1; transform:translateY(0);}
+  .reveal.in .feature-row:nth-child(1){transition-delay:.05s;}
+  .reveal.in .feature-row:nth-child(2){transition-delay:.16s;}
+  .reveal.in .feature-row:nth-child(3){transition-delay:.27s;}
+  .feature-row:nth-child(even){flex-direction:row-reverse;}
+  @media (max-width:760px){
+    .feature-row, .feature-row:nth-child(even){flex-direction:column; gap:28px;}
+    .feature-rows{gap:48px;}
+  }
+  .feature-text{flex:1; min-width:240px;}
+  .feature-text .tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12.5px; font-weight:700; color:var(--whistle);
+    background:rgba(47,184,255,0.1); border:1px solid rgba(47,184,255,0.3);
+    padding:5px 12px; border-radius:100px; margin-bottom:14px;
+  }
+  .feature-text h3{font-size:23px; font-weight:800; color:var(--chalk); margin-bottom:10px; letter-spacing:-0.02em;}
+  .feature-text p{font-size:15px; color:var(--mute); max-width:340px;}
+  .feature-mock{flex:1; min-width:260px; display:flex; justify-content:center;}
+
+  .mock-card{
+    width:100%; max-width:380px;
+    background:linear-gradient(160deg, rgba(244,241,232,0.06), rgba(244,241,232,0.02));
+    border:1px solid var(--pitch-line);
+    border-radius:18px;
+    padding:22px;
+  }
+
+  /* calendar mockup */
+  .mock-cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px;}
+  .mock-cal-col{
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    padding:8px 2px; border-radius:10px; background:rgba(244,241,232,0.03);
+  }
+  .mock-cal-col.active{background:rgba(47,184,255,0.12); border:1px solid rgba(47,184,255,0.35);}
+  .mock-cal-dow{font-size:10.5px; color:var(--mute);}
+  .mock-cal-date{font-size:13px; font-weight:700; color:var(--chalk);}
+  .mock-chip{font-size:9px; font-weight:700; padding:3px 5px; border-radius:6px; white-space:nowrap;}
+  .mock-chip.purple{background:rgba(151,105,237,0.2); color:#B79CF2;}
+  .mock-chip.red{background:rgba(226,71,47,0.2); color:#F0997B;}
+
+  /* communication mockup */
+  .mock-notice{
+    display:flex; align-items:center; gap:10px;
+    background:rgba(244,241,232,0.04); border-radius:12px; padding:12px 14px; margin-bottom:14px;
+  }
+  .mock-notice .mock-tag{font-size:11px; font-weight:700; color:var(--card-red); background:rgba(226,71,47,0.15); padding:3px 8px; border-radius:6px;}
+  .mock-notice p{font-size:13px; color:var(--chalk-dim); margin:0;}
+  .mock-msg{display:flex; gap:10px; margin-bottom:12px; align-items:flex-start;}
+  .mock-msg:last-child{margin-bottom:0;}
+  .mock-avatar{
+    flex-shrink:0; width:28px; height:28px; border-radius:50%;
+    background:rgba(244,241,232,0.08); display:flex; align-items:center; justify-content:center; font-size:14px;
+  }
+  .mock-msg p{
+    font-size:12.5px; color:var(--chalk-dim); background:rgba(244,241,232,0.05);
+    padding:9px 12px; border-radius:12px 12px 12px 4px; margin:0;
+  }
+  .mock-msg.player{margin-left:38px;}
+  .mock-msg.player p{background:rgba(47,184,255,0.1); color:var(--chalk);}
+
+  /* condition data mockup */
+  .mock-stat-row{display:flex; gap:10px; margin-bottom:18px;}
+  .mock-stat{
+    flex:1; text-align:center; background:rgba(244,241,232,0.04);
+    border-radius:10px; padding:10px 6px;
+  }
+  .mock-stat-lbl{display:block; font-size:10.5px; color:var(--mute); margin-bottom:4px;}
+  .mock-stat-val{display:block; font-size:18px; font-weight:800; color:var(--chalk);}
+  .mock-stat-val.good{color:#8FD65C;}
+  .mock-bars{display:flex; align-items:flex-end; gap:6px; height:64px;}
+  .mock-bars span{flex:1; background:linear-gradient(180deg, #A8E06B, #8FD65C); border-radius:4px 4px 0 0;}
+
   h2.section-title{
     font-size:clamp(30px, 4.5vw, 44px);
     color:var(--chalk);
@@ -477,6 +557,86 @@
           <span class="num">03</span>
           <h3>🤔 뭐가 다른지 모름</h3>
           <p>지금 하는 관리랑 뭐가 다른 건지, 직접 겪어보기 전엔 감이 안 옵니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="section-title display">소프트웨어로 이런 것까지 됩니다</h2>
+      <p class="section-lead">체험 기간에도 실제 서비스와 동일한 기능을 그대로 사용하실 수 있습니다.</p>
+      <div class="feature-rows">
+        <div class="feature-row">
+          <div class="feature-text">
+            <span class="tag">📅 일정 관리</span>
+            <h3>팀 일정을 한눈에</h3>
+            <p>훈련·리그경기 일정을 캘린더로 등록하고, 선수 참가 여부까지 자동으로 취합됩니다.</p>
+          </div>
+          <div class="feature-mock">
+            <div class="mock-card">
+              <div class="mock-cal-grid">
+                <div class="mock-cal-col"><span class="mock-cal-dow">월</span><span class="mock-cal-date">27</span></div>
+                <div class="mock-cal-col"><span class="mock-cal-dow">화</span><span class="mock-cal-date">28</span><span class="mock-chip purple">훈련</span></div>
+                <div class="mock-cal-col"><span class="mock-cal-dow">수</span><span class="mock-cal-date">29</span></div>
+                <div class="mock-cal-col active"><span class="mock-cal-dow">목</span><span class="mock-cal-date">30</span><span class="mock-chip red">리그경기</span></div>
+                <div class="mock-cal-col"><span class="mock-cal-dow">금</span><span class="mock-cal-date">31</span></div>
+                <div class="mock-cal-col"><span class="mock-cal-dow">토</span><span class="mock-cal-date">01</span><span class="mock-chip purple">훈련</span></div>
+                <div class="mock-cal-col"><span class="mock-cal-dow">일</span><span class="mock-cal-date">02</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-text">
+            <span class="tag">💬 온라인 소통</span>
+            <h3>선수와 바로 소통</h3>
+            <p>공지사항으로 팀 전체에 안내를 보내고, 선수 개인별 피드백을 남기고 답장까지 주고받을 수 있습니다.</p>
+          </div>
+          <div class="feature-mock">
+            <div class="mock-card mock-comm">
+              <div class="mock-notice">
+                <span class="mock-tag">공지</span>
+                <p>💧 여름철 수분·전해질 섭취 Tip</p>
+              </div>
+              <div class="mock-msg">
+                <span class="mock-avatar">🧑‍🏫</span>
+                <p>사이드에서 볼 받을 때 시작 위치를 조금 더 높여보자, 유효 공간을 더 잘 쓸 수 있을거야</p>
+              </div>
+              <div class="mock-msg player">
+                <span class="mock-avatar">🧑</span>
+                <p>네 감사합니다!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-text">
+            <span class="tag">📊 컨디션 데이터</span>
+            <h3>몸 상태를 데이터로</h3>
+            <p>선수가 매일 남기는 컨디션·통증 체크를 준비도·ACWR 같은 지표로 자동 계산해 보여줍니다.</p>
+          </div>
+          <div class="feature-mock">
+            <div class="mock-card mock-condition">
+              <div class="mock-stat-row">
+                <div class="mock-stat"><span class="mock-stat-lbl">준비도</span><span class="mock-stat-val">73</span></div>
+                <div class="mock-stat"><span class="mock-stat-lbl">컨디션</span><span class="mock-stat-val">7.6</span></div>
+                <div class="mock-stat"><span class="mock-stat-lbl">ACWR</span><span class="mock-stat-val good">0.83</span></div>
+              </div>
+              <div class="mock-bars">
+                <span style="height:70%"></span>
+                <span style="height:82%"></span>
+                <span style="height:75%"></span>
+                <span style="height:88%"></span>
+                <span style="height:79%"></span>
+                <span style="height:65%"></span>
+                <span style="height:73%"></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
